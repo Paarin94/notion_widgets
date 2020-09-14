@@ -7,8 +7,17 @@
     <title>Document</title>
     <style>
 
-:root {
-  color-scheme: dark light;
+input,
+input:matches([type="password"], [type="search"]) {
+  -webkit-appearance: textfield;
+  #if defined(HAVE_OS_DARK_MODE_SUPPORT) &&
+      HAVE_OS_DARK_MODE_SUPPORT
+    color: text;
+    background-color: -apple-system-control-background;
+  #else
+    background-color: white;
+  #endif
+  /* snip */
 }
   
 #timer {
